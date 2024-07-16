@@ -3,11 +3,14 @@ package com.example.rickandmortydb.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.rickandmortydb.R
 import com.example.rickandmortydb.model.ResultsItem
 import com.example.rickandmortydb.databinding.ItemProfileCardBinding
+import com.example.rickandmortydb.utils.ViewUtils.gone
+import com.example.rickandmortydb.utils.ViewUtils.visible
 
 
 class RickAndMortyAdapter() : RecyclerView.Adapter<RickAndMortyAdapter.ViewHolder>() {
@@ -42,6 +45,31 @@ class RickAndMortyAdapter() : RecyclerView.Adapter<RickAndMortyAdapter.ViewHolde
             Glide.with(itemView.context)
                 .load(data?.image)
                 .into(itemBinding.profileImageView)
+
+
+            val colorStateList = when(data?.status?.lowercase()){
+                "alive" -> {
+                    ContextCompat.getColorStateList(itemView.context, R.color.green_50)
+                }
+                "unknown" -> {
+                    ContextCompat.getColorStateList(itemView.context, R.color.gray_df)
+                }
+                "dead" -> {
+                    ContextCompat.getColorStateList(itemView.context, R.color.red_e4)
+                }
+                else -> {
+                    ContextCompat.getColorStateList(itemView.context, R.color.gray_df)
+                }
+            }
+            itemBinding.statusImageView.backgroundTintList = colorStateList
+            data?.status?.also {
+                itemBinding.statusTextView.text = it
+                itemBinding.statusTextView.visible()
+                itemBinding.statusImageView.visible()
+            }?:{
+                itemBinding.statusTextView.gone()
+                itemBinding.statusImageView.gone()
+            }
         }
     }
 }

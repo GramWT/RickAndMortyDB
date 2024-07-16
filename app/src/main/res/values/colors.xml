@@ -8,4 +8,7 @@
     <color name="gray">#F0EBDF</color>
     <color name="sky">#4691CC</color>
     <color name="blue">#082C8C</color>
+    <color name="green_50">#50B498</color>
+    <color name="gray_df">#DFD3C3</color>
+    <color name="red_e4">#E4003A</color>
 </resources>
