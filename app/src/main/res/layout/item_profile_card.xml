@@ -31,6 +31,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:textStyle="bold"
+            android:lines="2"
+            android:ellipsize="end"
             android:textColor="@color/gray"
             android:textSize="24sp"
             android:fontFamily="@font/beautiful_people_personal_use_de0g"
