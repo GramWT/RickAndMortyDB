@@ -1,9 +1,11 @@
-package com.example.rickandmortydb
+package com.example.rickandmortydb.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.rickandmortydb.model.RickAndMortyModel
+import com.example.rickandmortydb.repository.RickAndMortyRepository
 import kotlinx.coroutines.launch
 
 class RickAndMortyViewModel() : ViewModel() {

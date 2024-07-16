@@ -1,16 +1,15 @@
 package com.example.rickandmortydb
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rickandmortydb.ViewUtils.gone
-import com.example.rickandmortydb.ViewUtils.visible
+import com.example.rickandmortydb.adapter.RickAndMortyAdapter
+import com.example.rickandmortydb.utils.ViewUtils.gone
+import com.example.rickandmortydb.utils.ViewUtils.visible
 import com.example.rickandmortydb.databinding.ActivityMainBinding
+import com.example.rickandmortydb.model.ResultsItem
+import com.example.rickandmortydb.viewmodel.RickAndMortyViewModel
 
 class MainActivity : AppCompatActivity() {
 

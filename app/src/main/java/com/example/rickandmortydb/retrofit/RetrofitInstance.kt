@@ -1,5 +1,6 @@
-package com.example.rickandmortydb
+package com.example.rickandmortydb.retrofit
 
+import com.example.rickandmortydb.service.RickAndMortyApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,7 +13,7 @@ object RetrofitInstance {
             .build()
     }
 
-    val api:RickAndMortyApi by lazy {
+    val api: RickAndMortyApi by lazy {
         retrofit.create(RickAndMortyApi::class.java)
     }
 }

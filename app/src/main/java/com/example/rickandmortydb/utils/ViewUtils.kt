@@ -1,4 +1,4 @@
-package com.example.rickandmortydb
+package com.example.rickandmortydb.utils
 
 import android.view.View
 
