@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             binding.backButton.visible()
             binding.forwardButton.visible()
         }
+        binding.recyclerView.scrollToPosition(0)
     }
 
     private fun attachObserver() {
@@ -76,7 +77,6 @@ class MainActivity : AppCompatActivity() {
             it?.results?.also {
                 rickAndMortyListAdapter?.setData(it as ArrayList<ResultsItem?>)
             }
-
             setUI()
         }
     }
