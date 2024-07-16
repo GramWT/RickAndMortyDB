@@ -16,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/backButton"
             android:layout_width="32dp"
@@ -56,17 +57,17 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="20dp"
-                    android:background="@color/black_36">
+                    android:background="@color/black_36"
+                    android:padding="20dp">
 
                     <ImageView
                         android:id="@+id/characterImageView"
                         android:layout_width="0dp"
                         android:layout_height="200dp"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -76,14 +77,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:fontFamily="@font/beautiful_people_personal_use_de0g"
+                        android:gravity="center"
                         android:textColor="@color/gray"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        android:gravity="center"
-                        android:fontFamily="@font/beautiful_people_personal_use_de0g"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/characterImageView" />
+                        app:layout_constraintTop_toBottomOf="@+id/characterImageView"
+                        app:layout_goneMarginTop="16dp" />
 
                     <TextView
                         android:id="@+id/speciesTextView"
@@ -96,7 +98,8 @@
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+                        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+                        app:layout_goneMarginTop="4dp" />
 
                     <TextView
                         android:id="@+id/genderTextView"
@@ -109,7 +112,8 @@
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/speciesTextView" />
+                        app:layout_constraintTop_toBottomOf="@+id/speciesTextView"
+                        app:layout_goneMarginTop="4dp" />
 
                     <TextView
                         android:id="@+id/typeTextView"
@@ -122,7 +126,8 @@
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/genderTextView" />
+                        app:layout_constraintTop_toBottomOf="@+id/genderTextView"
+                        app:layout_goneMarginTop="4dp" />
 
                     <TextView
                         android:id="@+id/originalTextView"
@@ -135,7 +140,8 @@
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/typeTextView" />
+                        app:layout_constraintTop_toBottomOf="@+id/typeTextView"
+                        app:layout_goneMarginTop="4dp" />
 
                     <TextView
                         android:id="@+id/locationTextView"
@@ -148,7 +154,8 @@
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/originalTextView" />
+                        app:layout_constraintTop_toBottomOf="@+id/originalTextView"
+                        app:layout_goneMarginTop="4dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
