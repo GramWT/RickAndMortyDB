@@ -71,6 +71,7 @@ class RickAndMortyAdapter() : RecyclerView.Adapter<RickAndMortyAdapter.ViewHolde
                 itemBinding.statusTextView.gone()
                 itemBinding.statusImageView.gone()
             }
+
         }
     }
 }
