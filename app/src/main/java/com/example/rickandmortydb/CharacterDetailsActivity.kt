@@ -75,6 +75,22 @@ class CharacterDetailsActivity : BaseActivity() {
                     binding.typeTextView.visible()
                 }
             }
+            it?.origin?.name?.also {
+                binding.originalTextView.text = "Original : " + it
+                if (it.isEmpty()){
+                    binding.originalTextView.gone()
+                }else{
+                    binding.originalTextView.visible()
+                }
+            }
+            it?.location?.name?.also {
+                binding.locationTextView.text = "Location : " + it
+                if (it.isEmpty()){
+                    binding.locationTextView.gone()
+                }else{
+                    binding.locationTextView.visible()
+                }
+            }
         }
     }
 }
