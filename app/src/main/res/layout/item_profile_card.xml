@@ -33,6 +33,7 @@
             android:textStyle="bold"
             android:textColor="@color/gray"
             android:textSize="24sp"
+            android:fontFamily="@font/beautiful_people_personal_use_de0g"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profileImageView"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +46,7 @@
             android:layout_marginBottom="4dp"
             android:ellipsize="end"
             android:singleLine="true"
+            android:fontFamily="@font/beautiful_people_personal_use_de0g"
             android:textColor="@color/gray"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/statusImageView"
