@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             binding.backButton.visible()
             binding.forwardButton.visible()
         }
+        binding.pageTextView.text = "${viewModel.page}/${viewModel.maxPage}"
         binding.recyclerView.scrollToPosition(0)
     }
 
