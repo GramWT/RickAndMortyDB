@@ -11,7 +11,7 @@ import com.example.rickandmortydb.databinding.ActivityMainBinding
 import com.example.rickandmortydb.model.ResultsItem
 import com.example.rickandmortydb.viewmodel.RickAndMortyViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val binding:ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)

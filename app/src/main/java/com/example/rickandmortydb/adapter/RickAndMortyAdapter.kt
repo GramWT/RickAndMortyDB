@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.rickandmortydb.CharacterDetailsActivity
 import com.example.rickandmortydb.R
 import com.example.rickandmortydb.model.ResultsItem
 import com.example.rickandmortydb.databinding.ItemProfileCardBinding
@@ -42,6 +43,11 @@ class RickAndMortyAdapter() : RecyclerView.Adapter<RickAndMortyAdapter.ViewHolde
 
         fun bind(data: ResultsItem?) {
             itemBinding.nameTextView.text = data?.name
+
+            itemBinding.cardView.setOnClickListener {
+                val intent = CharacterDetailsActivity.createIntent(itemView.context,data?.id ?: 0)
+                itemView.context.startActivity(intent)
+            }
 
             Glide.with(itemView.context)
                 .load(data?.image)

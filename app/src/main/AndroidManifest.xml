@@ -15,6 +15,9 @@
         android:theme="@style/Theme.RickAndMortyDB"
         tools:targetApi="31">
         <activity
+            android:name=".CharacterDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
