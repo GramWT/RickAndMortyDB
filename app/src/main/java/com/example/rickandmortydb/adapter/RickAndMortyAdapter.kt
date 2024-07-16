@@ -10,6 +10,7 @@ import com.example.rickandmortydb.R
 import com.example.rickandmortydb.model.ResultsItem
 import com.example.rickandmortydb.databinding.ItemProfileCardBinding
 import com.example.rickandmortydb.utils.ViewUtils.gone
+import com.example.rickandmortydb.utils.ViewUtils.tintColor
 import com.example.rickandmortydb.utils.ViewUtils.visible
 
 
@@ -47,21 +48,21 @@ class RickAndMortyAdapter() : RecyclerView.Adapter<RickAndMortyAdapter.ViewHolde
                 .into(itemBinding.profileImageView)
 
 
-            val colorStateList = when(data?.status?.lowercase()){
+            val colorTint = when(data?.status?.lowercase()){
                 "alive" -> {
-                    ContextCompat.getColorStateList(itemView.context, R.color.green_50)
+                    R.color.green_50
                 }
                 "unknown" -> {
-                    ContextCompat.getColorStateList(itemView.context, R.color.gray_df)
+                    R.color.gray_df
                 }
                 "dead" -> {
-                    ContextCompat.getColorStateList(itemView.context, R.color.red_e4)
+                    R.color.red_e4
                 }
                 else -> {
-                    ContextCompat.getColorStateList(itemView.context, R.color.gray_df)
+                    R.color.gray_df
                 }
             }
-            itemBinding.statusImageView.backgroundTintList = colorStateList
+            itemBinding.statusImageView.tintColor(itemView.context,colorTint)
             data?.status?.also {
                 itemBinding.statusTextView.text = it
                 itemBinding.statusTextView.visible()
