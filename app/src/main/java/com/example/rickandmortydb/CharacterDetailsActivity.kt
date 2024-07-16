@@ -3,10 +3,11 @@ package com.example.rickandmortydb
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.rickandmortydb.databinding.ActivityCharacterDetailsBinding
+import com.example.rickandmortydb.utils.ViewUtils.gone
+import com.example.rickandmortydb.utils.ViewUtils.visible
 import com.example.rickandmortydb.viewmodel.RickAndMortyViewModel
 
 class CharacterDetailsActivity : BaseActivity() {
@@ -21,9 +22,9 @@ class CharacterDetailsActivity : BaseActivity() {
 
     companion object {
         private const val EXTRA_ID = "id"
-        fun createIntent(context: Context,id:Int): Intent {
+        fun createIntent(context: Context, id: Int): Intent {
             return Intent(context, CharacterDetailsActivity::class.java).apply {
-                putExtra(EXTRA_ID,id)
+                putExtra(EXTRA_ID, id)
             }
         }
     }
@@ -32,16 +33,48 @@ class CharacterDetailsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        intent.getIntExtra(EXTRA_ID,0)?.also {
+        intent.getIntExtra(EXTRA_ID, 0)?.also {
             viewModel.getCharacterById(it)
+        }
+
+        binding.backButton.setOnClickListener {
+            finish()
         }
 
         attachObserver()
     }
 
     private fun attachObserver() {
-        viewModel.character.observe(this){
-            Toast.makeText(this,"${it?.name}",Toast.LENGTH_SHORT).show()
+        viewModel.character.observe(this) {
+            Glide.with(this)
+                .load(it?.image)
+                .into(binding.characterImageView)
+
+            binding.nameTextView.text = it?.name
+            it?.species?.also {
+                binding.speciesTextView.text = "Species : " + it
+                if (it.isEmpty()){
+                    binding.speciesTextView.gone()
+                }else{
+                    binding.speciesTextView.visible()
+                }
+            }
+            it?.gender?.also {
+                binding.genderTextView.text = "Gender : " + it
+                if (it.isEmpty()){
+                    binding.genderTextView.gone()
+                }else{
+                    binding.genderTextView.visible()
+                }
+            }
+            it?.type?.also {
+                binding.typeTextView.text = "Type : " + it
+                if (it.isEmpty()){
+                    binding.typeTextView.gone()
+                }else{
+                    binding.typeTextView.visible()
+                }
+            }
         }
     }
 }
