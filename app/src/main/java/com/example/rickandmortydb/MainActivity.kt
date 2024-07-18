@@ -23,8 +23,6 @@ class MainActivity : BaseActivity() {
 
     private var rickAndMortyListAdapter: RickAndMortyAdapter? = null
 
-    private var loadingDialog: android.app.Dialog? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -54,8 +52,6 @@ class MainActivity : BaseActivity() {
         viewModel.getCharacter()
 
         attachObserver()
-
-        loadingDialog = Dialog.createLoadingDialog(this)
     }
 
     private fun setUI(){
@@ -82,16 +78,6 @@ class MainActivity : BaseActivity() {
                 rickAndMortyListAdapter?.setData(it as ArrayList<ResultsItem?>)
             }
             setUI()
-        }
-
-        viewModel.loadingDialog.observe(this){
-            if (it){
-                loadingDialog?.show()
-            }else{
-                if (loadingDialog?.isShowing == true) {
-                    loadingDialog?.dismiss()
-                }
-            }
         }
     }
 }
