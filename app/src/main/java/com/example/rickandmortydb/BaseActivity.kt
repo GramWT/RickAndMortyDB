@@ -7,11 +7,7 @@ import com.example.rickandmortydb.viewmodel.RickAndMortyViewModel
 
 open class BaseActivity : AppCompatActivity() {
 
-    private var loadingDialog: android.app.Dialog? = null
-
-    private val viewModel: RickAndMortyViewModel by viewModels {
-        RickAndMortyViewModelFactory()
-    }
+    var loadingDialog: android.app.Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,14 +19,5 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     private fun attachObserver() {
-        viewModel.loadingDialog.observe(this) {
-            if (it) {
-                loadingDialog?.show()
-            } else {
-                if (loadingDialog?.isShowing == true) {
-                    loadingDialog?.dismiss()
-                }
-            }
-        }
     }
 }

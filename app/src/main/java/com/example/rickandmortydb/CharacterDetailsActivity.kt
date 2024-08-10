@@ -45,6 +45,15 @@ class CharacterDetailsActivity : BaseActivity() {
     }
 
     private fun attachObserver() {
+        viewModel.loadingDialog.observe(this) {
+            if (it) {
+                loadingDialog?.show()
+            } else {
+                if (loadingDialog?.isShowing == true) {
+                    loadingDialog?.dismiss()
+                }
+            }
+        }
         viewModel.character.observe(this) {
             Glide.with(this)
                 .load(it?.image)

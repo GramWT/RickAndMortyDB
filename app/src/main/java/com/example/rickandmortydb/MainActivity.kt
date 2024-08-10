@@ -70,6 +70,15 @@ class MainActivity : BaseActivity() {
     }
 
     private fun attachObserver() {
+        viewModel.loadingDialog.observe(this) {
+            if (it) {
+                loadingDialog?.show()
+            } else {
+                if (loadingDialog?.isShowing == true) {
+                    loadingDialog?.dismiss()
+                }
+            }
+        }
         viewModel.allCharacter.observe(this){
              it?.info?.pages?.also {
                  viewModel.maxPage =  it
